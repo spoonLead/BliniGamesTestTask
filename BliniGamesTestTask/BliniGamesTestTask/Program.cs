@@ -20,13 +20,14 @@ namespace BliniGamesTestTask
 
 
             
-            List<GameObject> firstArrayNulleble = new List<GameObject>();
-            foreach( GameObject obj in firstArray)
+            List<int> firstArrayNullebleIndexes = new List<int>();
+            for(int i = 0; i < firstArray.Length; i++)
             {
-                if (obj == null)
-                    firstArrayNulleble.Add(obj);
+                if (firstArray[i] == null)
+                    firstArrayNullebleIndexes.Add(i);
             }
-            int nullElementsCount = firstArrayNulleble.Count;
+            
+            int nullElementsCount = firstArrayNullebleIndexes.Count;
 
 
             List<GameObject> replacementElementsFromSecondArray = new List<GameObject>();
@@ -37,6 +38,9 @@ namespace BliniGamesTestTask
             int replacementElementsCount = replacementElementsFromSecondArray.Count;
 
 
+
+            Random nullElement = new Random(DateTime.Now.Millisecond);
+            Random replacementElement = new Random(DateTime.Now.Millisecond);
 
 
 
