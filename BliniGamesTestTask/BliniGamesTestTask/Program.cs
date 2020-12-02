@@ -28,6 +28,8 @@ namespace BliniGamesTestTask
 
         public static void fillNullElFromFirstArrWithRandElFromSecondArr(ref GameObject[] firstArray, ref GameObject[] secondArray)
         {
+            Random rand = new Random(DateTime.Now.Millisecond);
+
             List<int> firstArrayNullIndexes = getIndexesFromNullElements(firstArray);
             int nullIndexesCount = firstArrayNullIndexes.Count;
 
@@ -36,35 +38,30 @@ namespace BliniGamesTestTask
 
 
 
-            Random rand = new Random(DateTime.Now.Millisecond);
-
-            int a;
-            int b;
-
             if (firstArrayNullIndexes.Count <= replacementElementsFromSecondArray.Count)
             {
                 for (int i = 0; i < nullIndexesCount; i++)
                 {
-                    a = rand.Next(0, firstArrayNullIndexes.Count);
-                    b = rand.Next(0, replacementElementsFromSecondArray.Count);
+                    int currReplacebleElement = rand.Next(0, firstArrayNullIndexes.Count);
+                    int currReplacingElement = rand.Next(0, replacementElementsFromSecondArray.Count);
 
-                    firstArray[firstArrayNullIndexes[a]] = replacementElementsFromSecondArray[b];
+                    firstArray[firstArrayNullIndexes[currReplacebleElement]] = replacementElementsFromSecondArray[currReplacingElement];
 
-                    firstArrayNullIndexes.RemoveAt(a);
-                    replacementElementsFromSecondArray.RemoveAt(b);
+                    firstArrayNullIndexes.RemoveAt(currReplacebleElement);
+                    replacementElementsFromSecondArray.RemoveAt(currReplacingElement);
                 }
             }
             else
             {
                 for (int i = 0; i < replacementElementsCount; i++)
                 {
-                    a = rand.Next(0, firstArrayNullIndexes.Count);
-                    b = rand.Next(0, replacementElementsFromSecondArray.Count);
+                    int currReplacebleElement = rand.Next(0, firstArrayNullIndexes.Count);
+                    int currReplacingElement = rand.Next(0, replacementElementsFromSecondArray.Count);
 
-                    firstArray[firstArrayNullIndexes[a]] = replacementElementsFromSecondArray[b];
+                    firstArray[firstArrayNullIndexes[currReplacebleElement]] = replacementElementsFromSecondArray[currReplacingElement];
 
-                    firstArrayNullIndexes.RemoveAt(a);
-                    replacementElementsFromSecondArray.RemoveAt(b);
+                    firstArrayNullIndexes.RemoveAt(currReplacebleElement);
+                    replacementElementsFromSecondArray.RemoveAt(currReplacingElement);
                 }
             }
         }
