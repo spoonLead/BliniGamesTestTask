@@ -1,0 +1,13 @@
+C:\Users\PUSH_ka\dev\blinigames\BliniGamesTestTask\BliniGamesTestTask\obj\Debug\netcoreapp3.1\BliniGamesTestTask.csprojAssemblyReference.cache
+C:\Users\PUSH_ka\dev\blinigames\BliniGamesTestTask\BliniGamesTestTask\obj\Debug\netcoreapp3.1\BliniGamesTestTask.AssemblyInfoInputs.cache
+C:\Users\PUSH_ka\dev\blinigames\BliniGamesTestTask\BliniGamesTestTask\obj\Debug\netcoreapp3.1\BliniGamesTestTask.AssemblyInfo.cs
+C:\Users\PUSH_ka\dev\blinigames\BliniGamesTestTask\BliniGamesTestTask\obj\Debug\netcoreapp3.1\BliniGamesTestTask.csproj.CoreCompileInputs.cache
+C:\Users\PUSH_ka\dev\blinigames\BliniGamesTestTask\BliniGamesTestTask\bin\Debug\netcoreapp3.1\BliniGamesTestTask.exe
+C:\Users\PUSH_ka\dev\blinigames\BliniGamesTestTask\BliniGamesTestTask\bin\Debug\netcoreapp3.1\BliniGamesTestTask.deps.json
+C:\Users\PUSH_ka\dev\blinigames\BliniGamesTestTask\BliniGamesTestTask\bin\Debug\netcoreapp3.1\BliniGamesTestTask.runtimeconfig.json
+C:\Users\PUSH_ka\dev\blinigames\BliniGamesTestTask\BliniGamesTestTask\bin\Debug\netcoreapp3.1\BliniGamesTestTask.runtimeconfig.dev.json
+C:\Users\PUSH_ka\dev\blinigames\BliniGamesTestTask\BliniGamesTestTask\bin\Debug\netcoreapp3.1\BliniGamesTestTask.dll
+C:\Users\PUSH_ka\dev\blinigames\BliniGamesTestTask\BliniGamesTestTask\bin\Debug\netcoreapp3.1\BliniGamesTestTask.pdb
+C:\Users\PUSH_ka\dev\blinigames\BliniGamesTestTask\BliniGamesTestTask\obj\Debug\netcoreapp3.1\BliniGamesTestTask.dll
+C:\Users\PUSH_ka\dev\blinigames\BliniGamesTestTask\BliniGamesTestTask\obj\Debug\netcoreapp3.1\BliniGamesTestTask.pdb
+C:\Users\PUSH_ka\dev\blinigames\BliniGamesTestTask\BliniGamesTestTask\obj\Debug\netcoreapp3.1\BliniGamesTestTask.genruntimeconfig.cache

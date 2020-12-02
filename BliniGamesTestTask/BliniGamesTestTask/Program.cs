@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace BliniGamesTestTask
 {
@@ -6,19 +7,41 @@ namespace BliniGamesTestTask
     {
         static void Main(string[] args)
         {
-            GameObject[] firstArray = new GameObject[5];
-            firstArray[0] = new GameObject();
-            firstArray[1] = null;
-            firstArray[2] = new GameObject();
-            firstArray[3] = null;
-            firstArray[4] = null;
-
-            GameObject[] secondArray = new GameObject[3];
-            secondArray[0] = new GameObject();
-            secondArray[1] = new GameObject();
-            secondArray[2] = new GameObject();
+            GameObject FA1 = new GameObject();
+            GameObject FA2 = new GameObject();
+            GameObject[] firstArray = new GameObject[5] { FA1, null, FA2, null, null };
 
 
+
+            GameObject SA1 = new GameObject();
+            GameObject SA2 = new GameObject();
+            GameObject SA3 = new GameObject();
+            GameObject[] secondArray = new GameObject[3] {SA1, SA2, SA3};
+
+
+            
+            List<GameObject> firstArrayNulleble = new List<GameObject>();
+            foreach( GameObject obj in firstArray)
+            {
+                if (obj == null)
+                    firstArrayNulleble.Add(obj);
+            }
+            int nullElementsCount = firstArrayNulleble.Count;
+
+
+            List<GameObject> replacementElementsFromSecondArray = new List<GameObject>();
+            foreach (GameObject obj in secondArray)
+            {
+                replacementElementsFromSecondArray.Add(obj);
+            }
+            int replacementElementsCount = replacementElementsFromSecondArray.Count;
+
+
+
+
+
+
+            Console.ReadKey();
 
         }
     }
