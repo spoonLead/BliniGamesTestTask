@@ -19,22 +19,19 @@ namespace BliniGamesTestTask
             GameObject[] secondArray = new GameObject[3] { SA1, SA2, SA3 };
 
 
+            fillNullElFromFirstArrWithRandElFromSecondArr(ref firstArray, ref secondArray);
 
-            List<int> firstArrayNullIndexes = new List<int>();
-            for (int i = 0; i < firstArray.Length; i++)
-            {
-                if (firstArray[i] == null)
-                    firstArrayNullIndexes.Add(i);
-            }
 
+            Console.ReadKey();
+
+        }
+
+        public static void fillNullElFromFirstArrWithRandElFromSecondArr(ref GameObject[] firstArray, ref GameObject[] secondArray)
+        {
+            List<int> firstArrayNullIndexes = getIndexesFromNullElements(firstArray);
             int nullIndexesCount = firstArrayNullIndexes.Count;
 
-
-            List<GameObject> replacementElementsFromSecondArray = new List<GameObject>();
-            foreach (GameObject obj in secondArray)
-            {
-                replacementElementsFromSecondArray.Add(obj);
-            }
+            List<GameObject> replacementElementsFromSecondArray = getConvertedGameObjArrayToList(secondArray);
             int replacementElementsCount = replacementElementsFromSecondArray.Count;
 
 
@@ -43,8 +40,8 @@ namespace BliniGamesTestTask
 
             int a;
             int b;
-            
-            if(firstArrayNullIndexes.Count <= replacementElementsFromSecondArray.Count)
+
+            if (firstArrayNullIndexes.Count <= replacementElementsFromSecondArray.Count)
             {
                 for (int i = 0; i < nullIndexesCount; i++)
                 {
@@ -70,13 +67,27 @@ namespace BliniGamesTestTask
                     replacementElementsFromSecondArray.RemoveAt(b);
                 }
             }
-            
-           
+        }
 
+        public static List<int> getIndexesFromNullElements(Object[] arr)
+        {
+            List<int> indexesFromNullElements = new List<int>();
+            for (int i = 0; i < arr.Length; i++)
+            {
+                if (arr[i] == null)
+                    indexesFromNullElements.Add(i);
+            }
+            return indexesFromNullElements;
+        }
 
-
-            Console.ReadKey();
-
+         public static List<GameObject> getConvertedGameObjArrayToList(GameObject[] arr)
+        {
+            List<GameObject> convertedArrayToList = new List<GameObject>();
+            foreach (GameObject obj in arr)
+            {
+                convertedArrayToList.Add(obj);
+            }
+            return convertedArrayToList;
         }
     }
 }
