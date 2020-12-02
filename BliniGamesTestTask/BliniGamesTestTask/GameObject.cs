@@ -4,7 +4,7 @@ using System.Text;
 
 namespace BliniGamesTestTask
 {
-    class GameObject
+    public class GameObject
     {
     }
 }

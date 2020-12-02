@@ -11,3 +11,7 @@ C:\Users\PUSH_ka\dev\blinigames\BliniGamesTestTask\BliniGamesTestTask\bin\Debug\
 C:\Users\PUSH_ka\dev\blinigames\BliniGamesTestTask\BliniGamesTestTask\obj\Debug\netcoreapp3.1\BliniGamesTestTask.dll
 C:\Users\PUSH_ka\dev\blinigames\BliniGamesTestTask\BliniGamesTestTask\obj\Debug\netcoreapp3.1\BliniGamesTestTask.pdb
 C:\Users\PUSH_ka\dev\blinigames\BliniGamesTestTask\BliniGamesTestTask\obj\Debug\netcoreapp3.1\BliniGamesTestTask.genruntimeconfig.cache
+C:\Users\PUSH_ka\dev\blinigames\BliniGamesTestTask\BliniGamesTestTask\bin\Debug\netcoreapp3.1\Castle.Core.dll
+C:\Users\PUSH_ka\dev\blinigames\BliniGamesTestTask\BliniGamesTestTask\bin\Debug\netcoreapp3.1\NSubstitute.dll
+C:\Users\PUSH_ka\dev\blinigames\BliniGamesTestTask\BliniGamesTestTask\bin\Debug\netcoreapp3.1\nunit.framework.dll
+C:\Users\PUSH_ka\dev\blinigames\BliniGamesTestTask\BliniGamesTestTask\obj\Debug\netcoreapp3.1\BliniGamesTestTask.csproj.CopyComplete
