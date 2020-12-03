@@ -9,7 +9,7 @@ namespace BliniGamesTestTask
         {
             GameObject FA1 = new GameObject();
             GameObject FA2 = new GameObject();
-            GameObject[] firstArray = new GameObject[6] { FA1, null, FA2, null,  null, null};
+            GameObject[] firstArray = new GameObject[2] { FA1, FA2,};
 
 
             GameObject SA1 = new GameObject();

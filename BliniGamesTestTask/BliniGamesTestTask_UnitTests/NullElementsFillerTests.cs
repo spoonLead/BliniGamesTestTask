@@ -10,7 +10,7 @@ namespace BliniGamesTestTask_UnitTests
         NullElementsFiller filler = new NullElementsFiller();
 
         [TestMethod]
-        public void getIndexesFromNullElements_NullOnTheEdges_04returned()
+        public void getIndexesFromNullElements_NullOnTheEdges_04Returned()
         {
             //arange
             GameObject[] testArr = new GameObject[5] { null, new GameObject(), new GameObject(), new GameObject(), null };
@@ -25,7 +25,7 @@ namespace BliniGamesTestTask_UnitTests
         }
 
         [TestMethod]
-        public void getIndexesFromNullElements_NullOnTheCenter_123returned()
+        public void getIndexesFromNullElements_NullOnTheCenter_123Returned()
         {
             //arange
             GameObject[] testArr = new GameObject[5] {new GameObject(), null, null, null, new GameObject()};
@@ -40,7 +40,7 @@ namespace BliniGamesTestTask_UnitTests
         }
 
         [TestMethod]
-        public void getIndexesFromNullElements_OnlyNull_01234returned()
+        public void getIndexesFromNullElements_OnlyNull_01234Returned()
         {
             //arange
             GameObject[] testArr = new GameObject[5] { null, null, null, null, null};
@@ -55,9 +55,18 @@ namespace BliniGamesTestTask_UnitTests
         }
 
         [TestMethod]
-        public void getIndexesFromNullElements_NoNull_123returned()
+        public void getIndexesFromNullElements_NoNull_EmptyListReturned()
         {
-            
+             //arange
+            GameObject[] testArr = new GameObject[5] { new GameObject(), new GameObject(), new GameObject(), new GameObject(), new GameObject() };
+            List<int> expected = new List<int>();
+
+            //act
+            List<int> actual = new List<int>();
+            actual = getIndexesFromNullElements(testArr);
+
+            //assert
+            CollectionAssert.AreEqual(expected, actual);
         }
     }
 }
