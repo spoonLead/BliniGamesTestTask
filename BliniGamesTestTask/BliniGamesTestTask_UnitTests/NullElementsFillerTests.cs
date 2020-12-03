@@ -72,7 +72,7 @@ namespace BliniGamesTestTask_UnitTests
 
         //________getConvertedGameObjArrayToList_tests_________
         [TestMethod]
-        public void getConvertedGameObjArrayToList_GameObjectArray_GameObjectList()
+        public void getConvertedGameObjArrayToList_GameObjectArray_GameObjectListReturned()
         {
             //arange
             GameObject TGO1 = new GameObject();
@@ -90,7 +90,7 @@ namespace BliniGamesTestTask_UnitTests
         }
 
         [TestMethod]
-        public void getConvertedGameObjArrayToList_GameObjectArrayWithNullElements_GameObjectListWithNullElements()
+        public void getConvertedGameObjArrayToList_GameObjectArrayWithNullElements_GameObjectListWithNullElementsReturned()
         {
             //arange
             GameObject TGO1 = new GameObject();
@@ -106,7 +106,7 @@ namespace BliniGamesTestTask_UnitTests
         }
 
         [TestMethod]
-        public void getConvertedGameObjArrayToList_GameObjectArrayWithOnlyNullElements_GameObjectListWithOnlyNullElements()
+        public void getConvertedGameObjArrayToList_GameObjectArrayWithOnlyNullElements_GameObjectListWithOnlyNullElementsReturned()
         {
             //arange
             GameObject TGO1 = new GameObject();
@@ -122,7 +122,7 @@ namespace BliniGamesTestTask_UnitTests
         }
 
         [TestMethod]
-        public void getConvertedGameObjArrayToList_EmptyGameObjectArray_EmptyGameObjectList()
+        public void getConvertedGameObjArrayToList_EmptyGameObjectArray_EmptyGameObjectListReturned()
         {
             //arange
             GameObject[] testArr = new GameObject[0];
@@ -136,6 +136,95 @@ namespace BliniGamesTestTask_UnitTests
             CollectionAssert.AreEqual(expected, actual);
         }
 
-       
+        //_________getCountOfGreaterFromIntAndGameObjList_tests_________
+        [TestMethod]
+        public void getCountOfGreaterFromIntAndGameObjList_Int1GO2_2Returned()
+        {
+            //arange
+            List<int> testIntArr = new List<int> { 1 };
+            List<GameObject> testGOArr = new List<GameObject> {new GameObject(), new GameObject()};
+            int expected = 2;
+
+            //act
+            int actual = getCountOfGreaterFromIntAndGameObjList(testIntArr, testGOArr);
+
+            //assert
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+        public void getCountOfGreaterFromIntAndGameObjList_Int2GO1_2Returned()
+        {
+            //arange
+            List<int> testIntArr = new List<int> { 1, 2 };
+            List<GameObject> testGOArr = new List<GameObject> { new GameObject() };
+            int expected = 2;
+
+            //act
+            int actual = getCountOfGreaterFromIntAndGameObjList(testIntArr, testGOArr);
+
+            //assert
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+        public void getCountOfGreaterFromIntAndGameObjList_Int1GO1_1Returned()
+        {
+            //arange
+            List<int> testIntArr = new List<int> { 1 };
+            List<GameObject> testGOArr = new List<GameObject> { new GameObject() };
+            int expected = 1;
+
+            //act
+            int actual = getCountOfGreaterFromIntAndGameObjList(testIntArr, testGOArr);
+
+            //assert
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+        public void getCountOfGreaterFromIntAndGameObjList_Int0GO1_1Returned()
+        {
+            //arange
+            List<int> testIntArr = new List<int>();
+            List<GameObject> testGOArr = new List<GameObject> { new GameObject() };
+            int expected = 1;
+
+            //act
+            int actual = getCountOfGreaterFromIntAndGameObjList(testIntArr, testGOArr);
+
+            //assert
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+        public void getCountOfGreaterFromIntAndGameObjList_Int1GO0_1Returned()
+        {
+            //arange
+            List<int> testIntArr = new List<int>() { 1 };
+            List<GameObject> testGOArr = new List<GameObject>();
+            int expected = 1;
+
+            //act
+            int actual = getCountOfGreaterFromIntAndGameObjList(testIntArr, testGOArr);
+
+            //assert
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+        public void getCountOfGreaterFromIntAndGameObjList_Int0GO0_0Returned()
+        {
+            //arange
+            List<int> testIntArr = new List<int>();
+            List<GameObject> testGOArr = new List<GameObject>();
+            int expected = 0;
+
+            //act
+            int actual = getCountOfGreaterFromIntAndGameObjList(testIntArr, testGOArr);
+
+            //assert
+            Assert.AreEqual(expected, actual);
+        }
     }
 }
