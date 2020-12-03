@@ -226,5 +226,79 @@ namespace BliniGamesTestTask_UnitTests
             //assert
             Assert.AreEqual(expected, actual);
         }
+
+        //___________fillNullElFromFirstArrWithRandElFromSecondArr_tests___________
+
+        static GameObject FA1 = new GameObject();
+        static GameObject FA2 = new GameObject();
+        
+
+        static GameObject SA1 = new GameObject();
+        static GameObject SA2 = new GameObject();
+        static GameObject SA3 = new GameObject();
+
+        
+        [TestMethod]
+        public void fillNullElFromFirstArrWithRandElFromSecondArr_FirstArrNullElCountMoreThanSecondArrEl()
+        {
+
+            //arange
+            GameObject[] firstArray = new GameObject[6] { FA1, null, null, null, FA2, null };
+            GameObject[] secondArray = new GameObject[3] { SA1, SA2, SA3 };
+
+            //act
+            fillNullElFromFirstArrWithRandElFromSecondArr(ref firstArray, ref secondArray);
+
+            //assert
+            Assert.IsTrue(hasGameObjectArrOneNullElement(firstArray));
+        }
+
+        public bool hasGameObjectArrOneNullElement(GameObject[] arr)
+        {
+            int nullElementCount = 0;
+            for(int i = 0; i < arr.Length; i++)
+            {
+                if (arr[i] == null)
+                    nullElementCount++;
+            }
+            if (nullElementCount == 1)
+                return true;
+            else
+                return false;
+        }
+
+        [TestMethod]
+        public void fillNullElFromFirstArrWithRandElFromSecondArr_FirstArrNullElCountLessThanSecondArrEl()
+        {
+            
+        }
+
+        [TestMethod]
+        public void fillNullElFromFirstArrWithRandElFromSecondArr_FirstArrNullElCountEqualsSecondArrEl_AllItemsAreNotNull()
+        {
+            //arange
+            GameObject[] firstArray = new GameObject[5] { FA1, null, null, null, FA2 };
+            GameObject[] secondArray = new GameObject[3] { SA1, SA2, SA3 };
+
+            //act
+            fillNullElFromFirstArrWithRandElFromSecondArr(ref firstArray, ref secondArray);
+
+            //assert
+            CollectionAssert.AllItemsAreNotNull(firstArray);
+        }
+
+        [TestMethod]
+        public void fillNullElFromFirstArrWithRandElFromSecondArr_FirstArrNullElCountEqualsSecondArrEl_AllItemsAreUnique()
+        {
+            //arange
+            GameObject[] firstArray = new GameObject[5] { FA1, null, null, null, FA2 };
+            GameObject[] secondArray = new GameObject[3] { SA1, SA2, SA3 };
+
+            //act
+            fillNullElFromFirstArrWithRandElFromSecondArr(ref firstArray, ref secondArray);
+
+            //assert
+            CollectionAssert.AllItemsAreUnique(firstArray);
+        }
     }
 }
