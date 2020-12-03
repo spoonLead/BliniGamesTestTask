@@ -138,7 +138,7 @@ namespace BliniGamesTestTask_UnitTests
 
         //_________getCountOfGreaterFromIntAndGameObjList_tests_________
         [TestMethod]
-        public void getCountOfGreaterFromIntAndGameObjList_Int1GO2_2Returned()
+        public void getCountOfSmallerFromIntAndGameObjList_Int1GO2_2Returned()
         {
             //arange
             List<int> testIntArr = new List<int> { 1 };
@@ -146,14 +146,14 @@ namespace BliniGamesTestTask_UnitTests
             int expected = 2;
 
             //act
-            int actual = getCountOfGreaterFromIntAndGameObjList(testIntArr, testGOArr);
+            int actual = getCountOfSmallerFromIntAndGameObjList(testIntArr, testGOArr);
 
             //assert
             Assert.AreEqual(expected, actual);
         }
 
         [TestMethod]
-        public void getCountOfGreaterFromIntAndGameObjList_Int2GO1_2Returned()
+        public void getCountOfSmallerFromIntAndGameObjList_Int2GO1_2Returned()
         {
             //arange
             List<int> testIntArr = new List<int> { 1, 2 };
@@ -161,14 +161,14 @@ namespace BliniGamesTestTask_UnitTests
             int expected = 2;
 
             //act
-            int actual = getCountOfGreaterFromIntAndGameObjList(testIntArr, testGOArr);
+            int actual = getCountOfSmallerFromIntAndGameObjList(testIntArr, testGOArr);
 
             //assert
             Assert.AreEqual(expected, actual);
         }
 
         [TestMethod]
-        public void getCountOfGreaterFromIntAndGameObjList_Int1GO1_1Returned()
+        public void getCountOfSmallerFromIntAndGameObjList_Int1GO1_1Returned()
         {
             //arange
             List<int> testIntArr = new List<int> { 1 };
@@ -176,14 +176,14 @@ namespace BliniGamesTestTask_UnitTests
             int expected = 1;
 
             //act
-            int actual = getCountOfGreaterFromIntAndGameObjList(testIntArr, testGOArr);
+            int actual = getCountOfSmallerFromIntAndGameObjList(testIntArr, testGOArr);
 
             //assert
             Assert.AreEqual(expected, actual);
         }
 
         [TestMethod]
-        public void getCountOfGreaterFromIntAndGameObjList_Int0GO1_1Returned()
+        public void getCountOfSmallerFromIntAndGameObjList_Int0GO1_1Returned()
         {
             //arange
             List<int> testIntArr = new List<int>();
@@ -191,14 +191,14 @@ namespace BliniGamesTestTask_UnitTests
             int expected = 1;
 
             //act
-            int actual = getCountOfGreaterFromIntAndGameObjList(testIntArr, testGOArr);
+            int actual = getCountOfSmallerFromIntAndGameObjList(testIntArr, testGOArr);
 
             //assert
             Assert.AreEqual(expected, actual);
         }
 
         [TestMethod]
-        public void getCountOfGreaterFromIntAndGameObjList_Int1GO0_1Returned()
+        public void getCountOfSmallerFromIntAndGameObjList_Int1GO0_1Returned()
         {
             //arange
             List<int> testIntArr = new List<int>() { 1 };
@@ -206,14 +206,14 @@ namespace BliniGamesTestTask_UnitTests
             int expected = 1;
 
             //act
-            int actual = getCountOfGreaterFromIntAndGameObjList(testIntArr, testGOArr);
+            int actual = getCountOfSmallerFromIntAndGameObjList(testIntArr, testGOArr);
 
             //assert
             Assert.AreEqual(expected, actual);
         }
 
         [TestMethod]
-        public void getCountOfGreaterFromIntAndGameObjList_Int0GO0_0Returned()
+        public void getCountOfSmallerFromIntAndGameObjList_Int0GO0_0Returned()
         {
             //arange
             List<int> testIntArr = new List<int>();
@@ -221,7 +221,7 @@ namespace BliniGamesTestTask_UnitTests
             int expected = 0;
 
             //act
-            int actual = getCountOfGreaterFromIntAndGameObjList(testIntArr, testGOArr);
+            int actual = getCountOfSmallerFromIntAndGameObjList(testIntArr, testGOArr);
 
             //assert
             Assert.AreEqual(expected, actual);
