@@ -17,14 +17,7 @@ namespace BliniGamesTestTask
 
 
 
-            int fillingIterationCount;
-            if (firstArrayNullIndexes.Count <= replacementElementsFromSecondArray.Count)
-                fillingIterationCount = nullIndexesCount;
-            else
-                fillingIterationCount = replacementElementsCount;
-
-
-
+            int fillingIterationCount = getCountOfGreaterFromIntAndGameObjList(firstArrayNullIndexes, replacementElementsFromSecondArray);
             Random rand = new Random(DateTime.Now.Millisecond);
             for (int i = 0; i < fillingIterationCount; i++)
             {
@@ -57,6 +50,15 @@ namespace BliniGamesTestTask
                 convertedArrayToList.Add(obj);
             }
             return convertedArrayToList;
+        }
+
+        protected static int getCountOfGreaterFromIntAndGameObjList(List<int> firstList, List<GameObject> secondList)
+        {
+            if (firstList.Count > secondList.Count)
+                return firstList.Count;
+            else
+                return secondList.Count;
+
         }
     }
 }
