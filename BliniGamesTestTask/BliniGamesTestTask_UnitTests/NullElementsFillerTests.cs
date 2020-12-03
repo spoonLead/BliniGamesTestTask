@@ -7,8 +7,7 @@ namespace BliniGamesTestTask_UnitTests
     [TestClass]
     public class NullElementsFillerTests : NullElementsFiller
     {
-        NullElementsFiller filler = new NullElementsFiller();
-
+        //_________getIndexesFromNullElements_tests________
         [TestMethod]
         public void getIndexesFromNullElements_NullOnTheEdges_04Returned()
         {
@@ -18,7 +17,7 @@ namespace BliniGamesTestTask_UnitTests
 
             //act
             List<int> actual = new List<int>();
-            actual = getIndexesFromNullElements(testArr);
+            actual = getListOfIndexesFromNullElementsInArr(testArr);
 
             //assert
             CollectionAssert.AreEqual(expected, actual);
@@ -33,7 +32,7 @@ namespace BliniGamesTestTask_UnitTests
 
             //act
             List<int> actual = new List<int>();
-            actual = getIndexesFromNullElements(testArr);
+            actual = getListOfIndexesFromNullElementsInArr(testArr);
 
             //assert
             CollectionAssert.AreEqual(expected, actual);
@@ -48,7 +47,7 @@ namespace BliniGamesTestTask_UnitTests
 
             //act
             List<int> actual = new List<int>();
-            actual = getIndexesFromNullElements(testArr);
+            actual = getListOfIndexesFromNullElementsInArr(testArr);
 
             //assert
             CollectionAssert.AreEqual(expected, actual);
@@ -63,10 +62,80 @@ namespace BliniGamesTestTask_UnitTests
 
             //act
             List<int> actual = new List<int>();
-            actual = getIndexesFromNullElements(testArr);
+            actual = getListOfIndexesFromNullElementsInArr(testArr);
 
             //assert
             CollectionAssert.AreEqual(expected, actual);
         }
+
+
+
+        //________getConvertedGameObjArrayToList_tests_________
+        [TestMethod]
+        public void getConvertedGameObjArrayToList_GameObjectArray_GameObjectList()
+        {
+            //arange
+            GameObject TGO1 = new GameObject();
+            GameObject TGO2 = new GameObject();
+            GameObject TGO3 = new GameObject();
+            GameObject[] testArr = new GameObject[3] {TGO1, TGO2, TGO3};
+            List<GameObject> expected = new List<GameObject>() {TGO1, TGO2, TGO3 };
+
+            //act
+            List<GameObject> actual = new List<GameObject>();
+            actual = getConvertedGameObjArrayToList(testArr);
+
+            //assert
+            CollectionAssert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+        public void getConvertedGameObjArrayToList_GameObjectArrayWithNullElements_GameObjectListWithNullElements()
+        {
+            //arange
+            GameObject TGO1 = new GameObject();
+            GameObject[] testArr = new GameObject[3] {TGO1, null, null };
+            List<GameObject> expected = new List<GameObject>() {TGO1, null, null};
+
+            //act
+            List<GameObject> actual = new List<GameObject>();
+            actual = getConvertedGameObjArrayToList(testArr);
+
+            //assert
+            CollectionAssert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+        public void getConvertedGameObjArrayToList_GameObjectArrayWithOnlyNullElements_GameObjectListWithOnlyNullElements()
+        {
+            //arange
+            GameObject TGO1 = new GameObject();
+            GameObject[] testArr = new GameObject[3] { TGO1, null, null };
+            List<GameObject> expected = new List<GameObject>() { TGO1, null, null };
+
+            //act
+            List<GameObject> actual = new List<GameObject>();
+            actual = getConvertedGameObjArrayToList(testArr);
+
+            //assert
+            CollectionAssert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+        public void getConvertedGameObjArrayToList_EmptyGameObjectArray_EmptyGameObjectList()
+        {
+            //arange
+            GameObject[] testArr = new GameObject[0];
+            List<GameObject> expected = new List<GameObject>();
+
+            //act
+            List<GameObject> actual = new List<GameObject>();
+            actual = getConvertedGameObjArrayToList(testArr);
+
+            //assert
+            CollectionAssert.AreEqual(expected, actual);
+        }
+
+       
     }
 }
