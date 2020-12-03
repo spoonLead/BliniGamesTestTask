@@ -10,10 +10,7 @@ namespace BliniGamesTestTask
         public static void fillNullElFromFirstArrWithRandElFromSecondArr(ref GameObject[] firstArray, ref GameObject[] secondArray)
         {
             List<int> firstArrayNullIndexes = getListOfIndexesFromNullElementsInArr(firstArray);
-            int nullIndexesCount = firstArrayNullIndexes.Count;
-
             List<GameObject> replacementElementsFromSecondArray = getConvertedGameObjArrayToList(secondArray);
-            int replacementElementsCount = replacementElementsFromSecondArray.Count;
 
 
             int fillingIterationCount = getCountOfSmallerFromIntAndGameObjList(firstArrayNullIndexes, replacementElementsFromSecondArray);
