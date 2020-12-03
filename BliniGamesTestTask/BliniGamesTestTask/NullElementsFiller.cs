@@ -20,13 +20,13 @@ namespace BliniGamesTestTask
             Random rand = new Random(DateTime.Now.Millisecond);
             for (int i = 0; i < fillingIterationCount; i++)
             {
-                int currReplacebleElement = rand.Next(0, firstArrayNullIndexes.Count);
-                int currReplacingElement = rand.Next(0, replacementElementsFromSecondArray.Count);
+                int currReplacebleElement = rand.Next(0, firstArrayNullIndexes.Count);  //Рандомный выбор элемента, который будет заменяться в первом массиве из оставшихся в нем элементов null
+                int currReplacingElement = rand.Next(0, replacementElementsFromSecondArray.Count);   //Рандомны выбор элемента, которым будет происходить замена из не использовавшихся для замены элементов второго массива
 
                 firstArray[firstArrayNullIndexes[currReplacebleElement]] = replacementElementsFromSecondArray[currReplacingElement];
 
-                firstArrayNullIndexes.RemoveAt(currReplacebleElement);
-                replacementElementsFromSecondArray.RemoveAt(currReplacingElement);
+                firstArrayNullIndexes.RemoveAt(currReplacebleElement);  //Удаление индекса null элемента (который был заменен в текущей итерации) из массива индексов null элементов первого массива
+                replacementElementsFromSecondArray.RemoveAt(currReplacingElement);  //Удаление использованного заменяющего элемента из копии второго массива
             }
         }
 

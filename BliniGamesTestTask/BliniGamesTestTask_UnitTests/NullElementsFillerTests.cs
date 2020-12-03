@@ -138,12 +138,12 @@ namespace BliniGamesTestTask_UnitTests
 
         //_________getCountOfGreaterFromIntAndGameObjList_tests_________
         [TestMethod]
-        public void getCountOfSmallerFromIntAndGameObjList_Int1GO2_2Returned()
+        public void getCountOfSmallerFromIntAndGameObjList_Int1GO2_1Returned()
         {
             //arange
             List<int> testIntArr = new List<int> { 1 };
             List<GameObject> testGOArr = new List<GameObject> {new GameObject(), new GameObject()};
-            int expected = 2;
+            int expected = 1;
 
             //act
             int actual = getCountOfSmallerFromIntAndGameObjList(testIntArr, testGOArr);
@@ -153,12 +153,12 @@ namespace BliniGamesTestTask_UnitTests
         }
 
         [TestMethod]
-        public void getCountOfSmallerFromIntAndGameObjList_Int2GO1_2Returned()
+        public void getCountOfSmallerFromIntAndGameObjList_Int2GO1_1Returned()
         {
             //arange
             List<int> testIntArr = new List<int> { 1, 2 };
             List<GameObject> testGOArr = new List<GameObject> { new GameObject() };
-            int expected = 2;
+            int expected = 1;
 
             //act
             int actual = getCountOfSmallerFromIntAndGameObjList(testIntArr, testGOArr);
@@ -183,12 +183,12 @@ namespace BliniGamesTestTask_UnitTests
         }
 
         [TestMethod]
-        public void getCountOfSmallerFromIntAndGameObjList_Int0GO1_1Returned()
+        public void getCountOfSmallerFromIntAndGameObjList_Int0GO1_0Returned()
         {
             //arange
             List<int> testIntArr = new List<int>();
             List<GameObject> testGOArr = new List<GameObject> { new GameObject() };
-            int expected = 1;
+            int expected = 0;
 
             //act
             int actual = getCountOfSmallerFromIntAndGameObjList(testIntArr, testGOArr);
@@ -198,12 +198,12 @@ namespace BliniGamesTestTask_UnitTests
         }
 
         [TestMethod]
-        public void getCountOfSmallerFromIntAndGameObjList_Int1GO0_1Returned()
+        public void getCountOfSmallerFromIntAndGameObjList_Int1GO0_0Returned()
         {
             //arange
             List<int> testIntArr = new List<int>() { 1 };
             List<GameObject> testGOArr = new List<GameObject>();
-            int expected = 1;
+            int expected = 0;
 
             //act
             int actual = getCountOfSmallerFromIntAndGameObjList(testIntArr, testGOArr);
@@ -237,11 +237,23 @@ namespace BliniGamesTestTask_UnitTests
         static GameObject SA2 = new GameObject();
         static GameObject SA3 = new GameObject();
 
-        
         [TestMethod]
-        public void fillNullElFromFirstArrWithRandElFromSecondArr_FirstArrNullElCountMoreThanSecondArrEl()
+        public void fillNullElFromFirstArrWithRandElFromSecondArr_FirstArrNullElCountMoreThanSecondArrEl_AllItemsAreUniqueInfirstArr()
         {
+            //arange
+            GameObject[] firstArray = new GameObject[6] { FA1, null, null, null, FA2, null };
+            GameObject[] secondArray = new GameObject[3] { SA1, SA2, SA3 };
 
+            //act
+            fillNullElFromFirstArrWithRandElFromSecondArr(ref firstArray, ref secondArray);
+
+            //assert
+            CollectionAssert.AllItemsAreUnique(firstArray);
+        }
+
+        [TestMethod]
+        public void fillNullElFromFirstArrWithRandElFromSecondArr_FirstArrNullElCountMoreThanSecondArrEl_FirstArrHaveOneNull()
+        {
             //arange
             GameObject[] firstArray = new GameObject[6] { FA1, null, null, null, FA2, null };
             GameObject[] secondArray = new GameObject[3] { SA1, SA2, SA3 };
@@ -268,13 +280,21 @@ namespace BliniGamesTestTask_UnitTests
         }
 
         [TestMethod]
-        public void fillNullElFromFirstArrWithRandElFromSecondArr_FirstArrNullElCountLessThanSecondArrEl()
+        public void fillNullElFromFirstArrWithRandElFromSecondArr_FirstArrNullElCountLessThanSecondArrEl_AllItemsAreUniqueInFirstArr()
         {
-            
+            //arange
+            GameObject[] firstArray = new GameObject[4] { FA1, null, null, FA2};
+            GameObject[] secondArray = new GameObject[3] { SA1, SA2, SA3 };
+
+            //act
+            fillNullElFromFirstArrWithRandElFromSecondArr(ref firstArray, ref secondArray);
+
+            //assert
+            CollectionAssert.AllItemsAreUnique(firstArray);
         }
 
         [TestMethod]
-        public void fillNullElFromFirstArrWithRandElFromSecondArr_FirstArrNullElCountEqualsSecondArrEl_AllItemsAreNotNull()
+        public void fillNullElFromFirstArrWithRandElFromSecondArr_FirstArrNullElCountEqualsSecondArrEl_AllItemsAreNotNullInFirstArr()
         {
             //arange
             GameObject[] firstArray = new GameObject[5] { FA1, null, null, null, FA2 };
@@ -288,7 +308,7 @@ namespace BliniGamesTestTask_UnitTests
         }
 
         [TestMethod]
-        public void fillNullElFromFirstArrWithRandElFromSecondArr_FirstArrNullElCountEqualsSecondArrEl_AllItemsAreUnique()
+        public void fillNullElFromFirstArrWithRandElFromSecondArr_FirstArrNullElCountEqualsSecondArrEl_AllItemsAreUniqueInFirstArr()
         {
             //arange
             GameObject[] firstArray = new GameObject[5] { FA1, null, null, null, FA2 };
